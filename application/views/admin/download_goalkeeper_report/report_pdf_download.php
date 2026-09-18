@@ -185,7 +185,7 @@ $html .= '<section style="page-break-after:always">
 
         </tbody>
     </table>
-    <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE FROM 1 TO 5, WITH 1 BEING THE LOWEST AND 5 BEING THE HIGHEST</p>
+    <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE FROM 1 TO 10, WITH 1 BEING THE LOWEST AND 10 BEING THE HIGHEST</p>
     </div>
 </section>';
 
@@ -357,7 +357,7 @@ $html .= '<section style="page-break-after:always">
             
         </tbody>
     </table>
-    <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE FROM 1 TO 5, WITH 1 BEING THE LOWEST AND 5 BEING THE HIGHEST</p>
+    <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE FROM 1 TO 10, WITH 1 BEING THE LOWEST AND 10 BEING THE HIGHEST</p>
     </div>
 </section>';
 
@@ -457,7 +457,7 @@ $html .= '<section style="page-break-after:always">
             
         </tbody>
     </table>
-    <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE FROM 1 TO 5, WITH 1 BEING THE LOWEST AND 5 BEING THE HIGHEST</p>
+    <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE FROM 1 TO 10, WITH 1 BEING THE LOWEST AND 10 BEING THE HIGHEST</p>
     </div>
 </section>';
 
@@ -589,7 +589,7 @@ $html .= '<section>
 
         </tbody>
     </table>
-     <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE FROM 1 TO 5, WITH 1 BEING THE LOWEST AND 5 BEING THE HIGHEST</p>
+     <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE FROM 1 TO 10, WITH 1 BEING THE LOWEST AND 10 BEING THE HIGHEST</p>
      </div>
 </section>';
 

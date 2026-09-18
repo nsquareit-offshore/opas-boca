@@ -88,9 +88,65 @@ class Auth extends MY_Controller {
 				$this->load->view('admin/auth/login');
 				$this->load->view('admin/includes/_footer', $data);
 			}
-		}	
+	}	
 
-		//-------------------------------------------------------------------------
+	//--------------------------------------------------------------
+	public function parentlogin()
+	{
+	    if ($this->input->post('submit'))
+	    {
+	        $this->form_validation->set_rules('username', 'Username', 'trim|required');
+	        $this->form_validation->set_rules('password', 'Password', 'trim|required');
+
+	        if ($this->form_validation->run() == FALSE)
+	        {
+	            $this->session->set_flashdata('errors', validation_errors());
+	            redirect(base_url('admin/auth/parentlogin'),'refresh');
+	        }
+
+	        $data = array(
+	            'username' => trim($this->input->post('username')),
+	            'password' => trim($this->input->post('password'))
+	        );
+
+	        $result = $this->auth_model->parent_login($data);
+	    
+	        if($result)
+	        {
+	            $parent_data = array(
+	                'user_id'         => '',
+	                'athlete_id'      => $result['id'],
+	                'username'        => $data['username'],
+	                'admin_role_id'   => 3,
+					'admin_role'      => 'Parent',
+					'is_supper' 		=> 0,
+					'is_admin_login'  => TRUE
+	            );
+	            
+	            $this->session->set_userdata($parent_data);
+	            $this->rbac->set_access_in_session(); // set access in session	
+	            redirect('admin/profile/athlete');
+	        }
+	        else
+	        {
+	            $this->session->set_flashdata('errors', 'Invalid Username or Password');
+	            redirect('admin/auth/parentlogin');
+	        }
+	    }
+	    else
+	    {
+	        $data['title'] = 'Parent Login';
+	        $data['navbar'] = false;
+			$data['sidebar'] = false;
+			$data['footer'] = false;
+			$data['bg_cover'] = true;
+			$this->load->view('admin/includes/_header', $data);
+	        $this->load->view('admin/auth/parentlogin', $data);
+			$this->load->view('admin/includes/_footer', $data);
+
+	    }
+	}
+	//-------------------------------------------------------------------------
 		public function register(){
 
 			if($this->input->post('submit')){
@@ -299,8 +355,13 @@ class Auth extends MY_Controller {
 
 		//-----------------------------------------------------------------------
 		public function logout(){
-			$this->session->sess_destroy();
-			redirect(base_url('admin/auth/login'), 'refresh');
+			if($this->session->userdata('admin_role_id') && $this->session->userdata('admin_role_id') != 3 ){
+				$this->session->sess_destroy();
+				redirect(base_url('admin/auth/login'), 'refresh');
+			}else{
+				$this->session->sess_destroy();
+				redirect(base_url('admin/auth/parentlogin'), 'refresh');
+			}
 		}
 		
 		// Get Country. State and City

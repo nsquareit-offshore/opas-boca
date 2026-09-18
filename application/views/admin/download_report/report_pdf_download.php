@@ -63,6 +63,25 @@ $html .= '<section style="page-break-after:always">
 
 </section>';
 
+
+$html .= '<section style="page-break-after:always">
+    <div style="text-align: center;background-color: #002060;color: #FFF;padding: 20px 0;font-weight: 500;font-size: 26px;">SPIDER CHART</div>
+
+    <div style="padding: 10px 60px">
+       <div class="card card-primary">
+           
+            <div class="card-body">
+
+                <div style="text-align:center;padding-top:20px;">
+                Assessment Spider Chart
+                    '.$spiral_chart['chart'].'
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>';
+
     if($report_type == 3){
 
     $html .= '<section style="page-break-after:always">
@@ -263,7 +282,7 @@ $html .= '<section style="page-break-after:always">
 
         </tbody>
     </table>
-    <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE FROM 1 TO 5, WITH 1 BEING THE LOWEST AND 5 BEING THE HIGHEST</p>
+    <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE FROM 1 TO 10, WITH 1 BEING THE LOWEST AND 10 BEING THE HIGHEST</p>
     </div>
 </section>';
 
@@ -411,7 +430,7 @@ $html .= '<section style="page-break-after:always">
 
         </tbody>
     </table>
-    <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE FROM 1 TO 5, WITH 1 BEING THE LOWEST AND 5 BEING THE HIGHEST</p>
+    <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE FROM 1 TO 10, WITH 1 BEING THE LOWEST AND 10 BEING THE HIGHEST</p>
     </div>
 </section>';
 
@@ -714,7 +733,7 @@ $html .= '<section style="page-break-after:always">
 
         </tbody>
     </table>
-     <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE RATING FROM 1 TO 5.WITH 1 BEING THE LOWEST & 5 BEING THE HIGHEST</p>
+     <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE RATING FROM 1 TO 10.WITH 1 BEING THE LOWEST & 10 BEING THE HIGHEST</p>
      </div>
 </section>';
 
@@ -1026,7 +1045,7 @@ $footer .= '<section>
     }
 
     $footer .= '
-     <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE FROM 1 TO 5, WITH 1 BEING THE LOWEST AND 5 BEING THE HIGHEST</p>
+     <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE FROM 1 TO 10, WITH 1 BEING THE LOWEST AND 10 BEING THE HIGHEST</p>
      </div>
 </section>';
 

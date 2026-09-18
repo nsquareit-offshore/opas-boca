@@ -61,8 +61,12 @@
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="password" class="control-label required">Password</label>
-                                <input type="password" name="password" class="form-control" id="password" value="" placeholder="" required>
+                                <label for="password" class="control-label">Password</label>
+                                <input type="password" name="password" class="form-control" id="password" value="" placeholder="Leave blank to keep current password">
+
+                                <small class="text-muted">
+                                    Leave blank if you do not want to change the password.
+                                </small>
                             </div>
                         </div>
                         

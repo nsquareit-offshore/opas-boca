@@ -37,7 +37,7 @@
                                                 $coach = get_coach_by_userid($this->session->userdata('user_id'));
                                                 $team_arr = unserialize($coach['assign_team']); 
                                                 ?>
-                                                 <select class="form-control" name="select_athlete_name" id="select_athlete_name" required="">
+                                                 <select class="form-control select2" name="select_athlete_name" id="select_athlete_name" required="">
                                                     <option value="">Select Athlete</option>
                                                     <?php 
                                                     foreach ($get_athlete as $key => $key_value) { 
@@ -53,7 +53,7 @@
                                                 <?php
                                             }else{
                                                 ?>
-                                                  <select class="form-control" name="select_athlete_name" id="select_athlete_name" required="">
+                                                  <select class="form-control select2" name="select_athlete_name" id="select_athlete_name" required="">
                                                     <option value="">Select Athlete</option>
                                                     <?php foreach ($get_athlete as $key => $key_value) { ?>
                                                            
@@ -118,12 +118,17 @@
                                     <div class="form-group">
                                         <label class="required" for="ground_balls">Ground balls(scoop/smother)</label>
                                         <select class="form-control" name="ground_balls" id="ground_balls" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -131,12 +136,17 @@
                                     <div class="form-group">
                                         <label class="required" for="chest_high_balls">Chest-high balls ("W")</label>
                                         <select class="form-control" id="chest_high_balls" name="chest_high_balls" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -144,12 +154,17 @@
                                     <div class="form-group">
                                         <label class="required" for="bouncing_balls">Bouncing balls</label>
                                         <select class="form-control" id="bouncing_balls" name="bouncing_balls" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -157,12 +172,17 @@
                                     <div class="form-group">
                                         <label class="required" for="tipping">Tipping</label>
                                         <select class="form-control" id="tipping" name="tipping" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -170,12 +190,17 @@
                                     <div class="form-group">
                                         <label class="required" for="deflect_ball">Deflect Ball</label>
                                         <select class="form-control" id="deflect_ball" name="deflect_ball" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -183,12 +208,17 @@
                                     <div class="form-group">
                                         <label class="required" for="reaction_saves">Reaction saves (point blank)</label>
                                         <select class="form-control" id="reaction_saves" name="reaction_saves" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -204,12 +234,17 @@
                                     <div class="form-group">
                                         <label class="required" for="to_the_left">To the left</label>
                                         <select class="form-control" name="to_the_left" id="to_the_left" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -217,12 +252,17 @@
                                     <div class="form-group">
                                         <label class="required" for="to_the_right">To the right</label>
                                         <select class="form-control" id="to_the_right" name="to_the_right" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>                                
@@ -237,12 +277,17 @@
                                     <div class="form-group">
                                         <label class="required" for="feet">Feet</label>
                                         <select class="form-control" id="feet" name="feet" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -250,12 +295,17 @@
                                     <div class="form-group">
                                         <label class="required" for="drop_kick">Drop kick</label>
                                         <select class="form-control" name="drop_kick" id="drop_kick" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -263,19 +313,24 @@
                                     <div class="form-group">
                                         <label class="required" for="goal_kick">Goal kick</label>
                                         <select class="form-control" name="goal_kick" id="goal_kick" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="card-footer">*Players scored on each Attribute Rating from 1 To 5.With 1 being the Lowest & 5 being the Highest</div>
+                        <div class="card-footer">*Players scored on each Attribute Rating from 1 To 10.With 1 being the Lowest & 10 being the Highest</div>
                     </div>
                 </div>
             </section>
@@ -296,12 +351,17 @@
                                     <div class="form-group">
                                         <label class="required" for="stance">Stance</label>
                                         <select class="form-control" name="stance" id="stance" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -309,12 +369,17 @@
                                     <div class="form-group">
                                         <label class="required" for="angle">Angle (effectiveness at narrowing)</label>
                                         <select class="form-control" id="angle" name="angle" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -329,12 +394,17 @@
                                             <div class="form-group">
                                                 <label class="required" for="crossed_ball">Crossed Ball</label>
                                                 <select class="form-control" id="crossed_ball" name="crossed_ball" required="">
-                                                    <option value="">Select between Level 1-5</option>
+                                                    <option value="">Select between Level 1-10</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
                                                     <option value="4">4</option>
                                                     <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -342,12 +412,17 @@
                                             <div class="form-group">
                                                 <label class="required" for="penalty_kick">Penalty kick</label>
                                                 <select class="form-control" id="penalty_kick" name="penalty_kick" required="">
-                                                    <option value="">Select between Level 1-5</option>
+                                                    <option value="">Select between Level 1-10</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
                                                     <option value="4">4</option>
                                                     <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -355,12 +430,17 @@
                                             <div class="form-group">
                                                 <label class="required" for="corner_kick">Corner kick</label>
                                                 <select class="form-control" id="corner_kick" name="corner_kick" required="">
-                                                    <option value="">Select between Level 1-5</option>
+                                                    <option value="">Select between Level 1-10</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
                                                     <option value="4">4</option>
                                                     <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -368,12 +448,17 @@
                                             <div class="form-group">
                                                 <label class="required" for="direct_indirect_free_kick">Direct/Indirect free kick</label>
                                                 <select class="form-control" id="direct_indirect_free_kick" name="direct_indirect_free_kick" required="">
-                                                    <option value="">Select between Level 1-5</option>
+                                                    <option value="">Select between Level 1-10</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
                                                     <option value="4">4</option>
                                                     <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -387,12 +472,17 @@
                                     <div class="form-group">
                                         <label class="required" for="anticipation">Anticipation</label>
                                         <select class="form-control" id="anticipation" name="anticipation" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -400,12 +490,17 @@
                                     <div class="form-group">
                                         <label class="required" for="coming_off_goal_line">Coming off goal line(timing)</label>
                                         <select class="form-control" id="coming_off_goal_line" name="coming_off_goal_line" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -413,12 +508,17 @@
                                     <div class="form-group">
                                         <label class="required" for="using_the_back_pass_effectively">Using the back pass effectively</label>
                                         <select class="form-control" id="using_the_back_pass_effectively" name="using_the_back_pass_effectively" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -426,12 +526,17 @@
                                     <div class="form-group">
                                         <label class="required" for="commanding_the_box">Commanding the box</label>
                                         <select class="form-control" id="commanding_the_box" name="commanding_the_box" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -439,12 +544,17 @@
                                     <div class="form-group">
                                         <label class="required" for="organize_defense">Organize defense (ball far from goal)</label>
                                         <select class="form-control" id="organize_defense" name="organize_defense" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -452,12 +562,17 @@
                                     <div class="form-group">
                                         <label class="required" for="handling_crosses">Handling crosses("Keeper"/"away")</label>
                                         <select class="form-control" id="handling_crosses" name="handling_crosses" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -465,12 +580,17 @@
                                     <div class="form-group">
                                         <label class="required" for="vision_of_the_field">Vision of the field</label>
                                         <select class="form-control" id="vision_of_the_field" name="vision_of_the_field" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -478,12 +598,17 @@
                                     <div class="form-group">
                                         <label class="required" for="control_pace">Control pace (quick counter/slow)</label>
                                         <select class="form-control" id="control_pace" name="control_pace" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -491,18 +616,23 @@
                                     <div class="form-group">
                                         <label class="required" for="set_position_at_time_of_shot">"Set" position at time of shot</label>
                                         <select class="form-control" id="set_position_at_time_of_shot" name="set_position_at_time_of_shot" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer">*Players scored on each Attribute Rating from 1 To 5.With 1 being the Lowest & 5 being the Highest</div>
+                        <div class="card-footer">*Players scored on each Attribute Rating from 1 To 10.With 1 being the Lowest & 10 being the Highest</div>
                 </div>
                 
             </section>
@@ -519,12 +649,17 @@
                                     <div class="form-group">
                                         <label class="required" for="footwork">Footwork</label>
                                         <select class="form-control" id="footwork" name="footwork" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -532,12 +667,17 @@
                                     <div class="form-group">
                                         <label class="required" for="agility">Agility(gracefulness)</label>
                                         <select class="form-control" id="agility" name="agility" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -545,12 +685,17 @@
                                     <div class="form-group">
                                         <label class="required" for="explosiveness">Explosiveness (quickness)</label>
                                         <select class="form-control" id="explosiveness" name="explosiveness" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -558,12 +703,17 @@
                                     <div class="form-group">
                                         <label class="required" for="coordination_and_body_control">Coordination and body control</label>
                                         <select class="form-control" id="coordination_and_body_control" name="coordination_and_body_control" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -571,12 +721,17 @@
                                     <div class="form-group">
                                         <label class="required" for="reflex_speed">Reflex speed</label>
                                         <select class="form-control" id="reflex_speed" name="reflex_speed" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -601,12 +756,17 @@
                                     <div class="form-group">
                                         <label class="required" for="composure">Composure (under pressure)</label>
                                         <select class="form-control" name="composure" id="composure" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -614,12 +774,17 @@
                                     <div class="form-group">
                                         <label class="required" for="leadership">Leadership</label>
                                         <select class="form-control" name="leadership" id="leadership" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -627,12 +792,17 @@
                                     <div class="form-group">
                                         <label class="required" for="bravery">Bravery</label>
                                         <select class="form-control" name="bravery" id="bravery" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -640,12 +810,17 @@
                                     <div class="form-group">
                                         <label class="required" for="self_confidence">Self-confidence</label>
                                         <select class="form-control" name="self_confidence" id="self_confidence" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -653,12 +828,17 @@
                                     <div class="form-group">
                                         <label class="required" for="game_mentality">Game mentality (Football Brain) S/W</label>
                                         <select class="form-control" name="game_mentality" id="game_mentality" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -666,12 +846,17 @@
                                     <div class="form-group">
                                         <label class="required" for="work_rate">Work rate (effort)</label>
                                         <select class="form-control" name="work_rate" id="work_rate" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -679,12 +864,17 @@
                                     <div class="form-group">
                                         <label class="required" for="communication_skills">Communication skills</label>
                                         <select class="form-control" name="communication_skills" id="communication_skills" required="">
-                                            <option value="">Select between Level 1-5</option>
+                                            <option value="">Select between Level 1-10</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -692,7 +882,7 @@
                             </div>
                         </div>
                                 
-                        <div class="card-footer">*Players scored on each Attribute Rating from 1 To 5.With 1 being the Lowest & 5 being the Highest</div>
+                        <div class="card-footer">*Players scored on each Attribute Rating from 1 To 10.With 1 being the Lowest & 10 being the Highest</div>
                     </div>
                 </div>
             </section>

@@ -3,7 +3,18 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
 ?>  
 
 <?php 
-        $user_array = (get_user_name_by_id($this->session->userdata('user_id')));
+if($this->session->userdata('admin_role_id') && $this->session->userdata('admin_role_id') == 3 ){
+  $athlete_array =  (get_athlete_by_id($this->session->userdata('athlete_id')));
+  $user_array = array();
+  $user_array['image'] = $athlete_array['upload_data'];
+  $user_array['firstname'] = $athlete_array['first_name'];
+  $user_array['lastname'] = $athlete_array['last_name'];
+  $user_array['admin_role_id'] = 3 ;
+}else{
+   $user_array = (get_user_name_by_id($this->session->userdata('user_id')));
+}
+
+       
        
         $upload_data = $user_array['image'] ? $user_array['image'] : 'profilepic_default.png';
 
@@ -152,6 +163,38 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
 
         <?php $count++; 
         endforeach; ?>
+        
+        <?php if($user_array['admin_role_id'] == 1): ?> 
+          <li id="development_plan_form" class="nav-item has-treeview has-treeview">
+
+            <a href="<?= base_url('admin/development_plan_form/'); ?>" class="nav-link">
+              <i class="nav-icon fa fa-user"></i>
+              <p>
+                Development Plan Report<i class="right fa fa-angle-left"></i></p>
+            </a>
+
+            <ul class="nav nav-treeview" style="display: none;">            
+              <li class="nav-item">
+                <a href="<?= base_url('admin/development_plan_form/'); ?>" class="nav-link">
+                  <i class="fa fa-pencil-square-o nav-icon"></i>
+                  <p>Create/View Report</p>
+                </a>
+              </li>
+
+              
+              <li class="nav-item">
+                <a href="<?= base_url('admin/download_development_plan_report/'); ?>" class="nav-link">
+                  <i class="fa fa-download nav-icon"></i>
+                  <p>Download Report</p>
+                </a>
+              </li>
+
+                         
+            </ul>
+          </li>
+
+        
+        <?php endif; ?>
 
          <?php if($user_array['admin_role_id'] == 1): ?> 
           <li id="settings" class="nav-item  has-treeview">
@@ -166,7 +209,27 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
         </li>
         <?php endif; ?>
 
- 
+        <?php if($user_array['admin_role_id'] == 3): ?> 
+         
+          <li id="profile" class="nav-item  has-treeview">
+            <a href="<?= base_url('admin/profile/athlete'); ?>" class="nav-link">
+              <i class="nav-icon fa fa-user"></i>
+              <p>Profile</p>
+            </a>         
+          </li>
+          <li class="nav-item">
+            <a href="<?= base_url('admin/download_report/athlete'); ?>" class="nav-link">
+              <i class="fa fa-download nav-icon"></i>
+              <p>Download Report</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= base_url('admin/download_development_plan_report/athlete'); ?>" class="nav-link">
+              <i class="fa fa-download nav-icon"></i>
+              <p>Development Plan Report</p>
+            </a>
+          </li>
+        <?php endif; ?>
 
 <!--         <li class="nav-header"><?= trans('miscellaneous') ?></li>
         <li class="nav-item">

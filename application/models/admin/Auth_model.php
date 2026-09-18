@@ -22,6 +22,49 @@ class Auth_model extends CI_Model{
 		}
 	}
 
+	public function parent_login($data)
+	{
+	    $this->db->from('ci_athlete');
+
+	    $query = $this->db->get();
+
+	    if($query->num_rows() == 0)
+	    {
+	        return false;
+	    }
+
+	    foreach($query->result_array() as $row)
+	    {
+	        // Username = firstname + birth year
+            $date = DateTime::createFromFormat('d/m/Y', trim($row['brith_dd']));
+
+			if ($date) {
+			    $year = $date->format('Y');
+			} else {
+			    $year = '';
+			}
+
+	        //$year = date('Y', strtotime($row['brith_dd']));
+			$lastInitial = strtolower(substr(trim($row['last_name']), 0, 1));
+	        $username = strtolower(
+	            preg_replace('/\s+/', '', $row['first_name']) .$lastInitial. $year
+	        );
+
+	        // Password = DOB numeric only
+	        $password = preg_replace('/[^0-9]/', '', $row['brith_dd']);
+
+	        if(
+	            strtolower($data['username']) == $username &&
+	            $data['password'] == $password
+	        )
+	        {
+	            return $row;
+	        }
+	    }
+
+	    return false;
+	}
+
 	//--------------------------------------------------------------------
 	public function register($data){
 		$this->db->insert('ci_users', $data);

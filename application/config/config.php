@@ -30,7 +30,7 @@ $url = (isset($_SERVER['HTTPS']) ? "https://" : "http://");
 
 $url .= $_SERVER['HTTP_HOST']. str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
 
-$config['base_url'] = '';
+$config['base_url'] = 'http://localhost/boca/';
 
 /*
 |--------------------------------------------------------------------------

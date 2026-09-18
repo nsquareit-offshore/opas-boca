@@ -53,10 +53,10 @@
                             <div class="form-group">
                                <label for="team_age_category" class="control-label">Age Category</label>
                                 <select name="team_age_category" class="form-control" id="team_age_category">
-                                    <option value="U8">U8</option>
-                                    <option value="U10">U10</option>
-                                    <option value="U12">U12</option>
-                                    <option value="U14">U14</option>
+                                    <option value="U9">U9</option>
+                                    <option value="U11">U11</option>
+                                    <option value="U13">U13</option>
+                                    <option value="U15">U15</option>
                                     <option value="U17">U17</option>
                                     <option value="U19">U19</option>
                                     <option value="Open">Open</option>

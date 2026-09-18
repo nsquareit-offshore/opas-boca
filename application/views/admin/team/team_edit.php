@@ -54,12 +54,12 @@
                             <div class="form-group">
                                 <label for="team_age_category" class="control-label">Age Category</label>
                                 <select name="team_age_category" class="form-control" id="team_age_category">
-                                    <option value="U8" <?= ($team_detail['age_cat'] == "U8")? 'selected' : ''; ?>>U8</option>
-                                    <option value="U10" <?= ($team_detail['age_cat'] == "U10")? 'selected' : ''; ?>>U10</option>
-                                    <option value="U12" <?= ($team_detail['age_cat'] == "U12")? 'selected' : ''; ?>>U12</option>
-                                    <option value="U14" <?= ($team_detail['age_cat'] == "U14")? 'selected' : ''; ?>>U14</option>
+                                    <option value="U9" <?= ($team_detail['age_cat'] == "U9")? 'selected' : ''; ?>>U9</option>
+                                    <option value="U11" <?= ($team_detail['age_cat'] == "U11")? 'selected' : ''; ?>>U11</option>
+                                    <option value="U13" <?= ($team_detail['age_cat'] == "U13")? 'selected' : ''; ?>>U13</option>
+                                    <option value="U15" <?= ($team_detail['age_cat'] == "U15")? 'selected' : ''; ?>>U15</option>
                                     <option value="U17" <?= ($team_detail['age_cat'] == "U17")? 'selected' : ''; ?>>U17</option>
-                                    <option value="U19" <?= ($team_detail['age_cat'] == "U19")? 'selected' : ''; ?>>U19</option>    
+                                    <option value="U19" <?= ($team_detail['age_cat'] == "U19")? 'selected' : ''; ?>>U19</option>
                                     <option value="Open">Open</option>
                                 </select>
                             </div>

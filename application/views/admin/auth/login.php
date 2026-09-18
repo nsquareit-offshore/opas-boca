@@ -33,6 +33,10 @@
           </div>
         <?php echo form_close(); ?>
 
+         <p class="mb-1">
+          <a href="<?= base_url('admin/auth/parentlogin'); ?>">Parent Login</a>
+        </p>
+
 <!--         <p class="mb-1">
           <a href="<?= base_url('admin/auth/forgot_password'); ?>"><?= trans('i_forgot_my_password') ?></a>
         </p>

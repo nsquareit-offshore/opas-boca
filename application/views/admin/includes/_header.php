@@ -28,11 +28,19 @@
   <link rel="stylesheet" href="<?= base_url()?>assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <!-- DropZone -->
   <link rel="stylesheet" href="<?= base_url()?>assets/plugins/dropzone/dropzone.css">
+  
+    <!-- Select2 -->
+  <link rel="stylesheet" href="<?= base_url()?>assets/plugins/select2/select2.min.css">
+  
+  <link rel="stylesheet" href="<?= base_url()?>assets/dist/css/custom.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <!-- jQuery -->
   <script src="<?= base_url()?>assets/plugins/jquery/jquery.min.js"></script>
+  <script src="<?= base_url()?>assets/plugins/select2/select2.full.min.js"></script>
 
+  <script src="<?= base_url() ?>assets/plugins/chart.js/Chart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body class="hold-transition sidebar-mini <?=  (isset($bg_cover)) ? 'bg-cover' : '' ?>">

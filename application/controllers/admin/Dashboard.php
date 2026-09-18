@@ -315,10 +315,14 @@ class Dashboard extends My_Controller {
 
 	public function index(){
 
-		$data['coach'] = get_coach_by_userid($this->session->userdata('user_id'));
+		if($this->session->userdata('admin_role_id') && $this->session->userdata('admin_role_id') != 3 ){
+			$data['coach'] = get_coach_by_userid($this->session->userdata('user_id'));
+			$team_id = $data['coach']['assign_team'];
+		}
+		
 		$data['is_supper'] = $this->session->userdata('is_supper');
 
-		$team_id = $data['coach']['assign_team'];
+		
 		if(isset($team_id)){
 		   $team_arr = unserialize($team_id);  
 		}else{
@@ -350,7 +354,12 @@ class Dashboard extends My_Controller {
     		redirect(base_url('admin/dashboard/index_1'));
 		}
 		else{
-			$this->load->view('admin/dashboard/general');
+
+			if($this->session->userdata('admin_role_id') && $this->session->userdata('admin_role_id') != 3 ){
+				$this->load->view('admin/dashboard/general');
+			}else{
+				$this->load->view('admin/dashboard/parent');
+			}
 		}
 
     	$this->load->view('admin/includes/_footer');

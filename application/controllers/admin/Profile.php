@@ -7,6 +7,9 @@ class Profile extends MY_Controller {
 		parent::__construct();
 		auth_check(); // check login auth
 		$this->load->model('admin/admin_model', 'admin_model');
+		$this->load->model('admin/athlete_model', 'athlete_model');
+		$this->load->model('admin/coach_model', 'coach_model');
+
 	}
 
 	//-------------------------------------------------------------------------
@@ -37,6 +40,28 @@ class Profile extends MY_Controller {
 			$this->load->view('admin/profile/index', $data);
 			$this->load->view('admin/includes/_footer');
 		}
+	}
+
+
+	public function athlete(){
+
+			$data['title'] = 'Athlete Profile';
+			$data['admin'] = $this->admin_model->get_user_detail();
+
+			$data['all_excellence_team'] = $this->coach_model->get_program_team('Excellence');
+			$data['all_residential_team'] = $this->coach_model->get_program_team('Residential');
+			$data['all_academic_team'] = $this->coach_model->get_program_team('Academic');
+
+			$id = $this->session->userdata('athlete_id');
+			if($id){
+				$data['athlete_detail'] = $this->athlete_model->get_athlete_by_id($id);
+			}else{
+				$data['athlete_detail'] = array();
+			}
+			$this->load->view('admin/includes/_header');
+			$this->load->view('admin/profile/athlete_profile', $data);
+			$this->load->view('admin/includes/_footer');
+		
 	}
 
 	//-------------------------------------------------------------------------

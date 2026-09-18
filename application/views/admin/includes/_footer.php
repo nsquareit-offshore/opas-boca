@@ -47,7 +47,7 @@ var csfr_token_value = '<?php echo $this->security->get_csrf_hash(); ?>';
 $(function(){
 //-------------------------------------------------------------------
 // Country State & City Change
-
+$('.select2').select2()
 $(document).on('change','.country',function()
 {
 

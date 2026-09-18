@@ -59,6 +59,12 @@
         return $result = $query->row_array();
     }
 
+    function get_athlete_by_id($id){
+         $ci =& get_instance();
+        $query = $ci->db->get_where('ci_athlete', array('id' => $id));
+        return $result = $query->row_array();
+    }
+
     function get_coach_by_userid($id){
          $ci =& get_instance();
         $query = $ci->db->get_where('ci_coach', array('user_id' => $id));
@@ -588,7 +594,7 @@ $html .= '<section style="page-break-after:always">
 
         </tbody>
     </table>
-    <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE FROM 1 TO 5, WITH 1 BEING THE LOWEST AND 5 BEING THE HIGHEST</p>
+    <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE FROM 1 TO 10, WITH 1 BEING THE LOWEST AND 10 BEING THE HIGHEST</p>
     </div>
 </section>';
 
@@ -736,7 +742,7 @@ $html .= '<section style="page-break-after:always">
 
         </tbody>
     </table>
-    <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE FROM 1 TO 5, WITH 1 BEING THE LOWEST AND 5 BEING THE HIGHEST</p>
+    <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE FROM 1 TO 10, WITH 1 BEING THE LOWEST AND 10 BEING THE HIGHEST</p>
     </div>
 </section>';
 
@@ -1039,7 +1045,7 @@ $html .= '<section style="page-break-after:always">
 
         </tbody>
     </table>
-     <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE RATING FROM 1 TO 5.WITH 1 BEING THE LOWEST & 5 BEING THE HIGHEST</p>
+     <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE RATING FROM 1 TO 10.WITH 1 BEING THE LOWEST & 10 BEING THE HIGHEST</p>
      </div>
 </section>';
 
@@ -1351,7 +1357,7 @@ $footer .= '<section style="page-break-after:always">
     }
 
     $footer .= '
-     <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE FROM 1 TO 5, WITH 1 BEING THE LOWEST AND 5 BEING THE HIGHEST</p>
+     <p style="font-size: 12px;">*PLAYERS SCORED ON EACH ATTRIBUTE FROM 1 TO 10, WITH 1 BEING THE LOWEST AND 10 BEING THE HIGHEST</p>
      </div>
 </section>';
 
@@ -2485,6 +2491,42 @@ function pdf_report_sent_academic($data){
             $y=substr($x,0,$length) . '...';
             echo $y;
           }
+        }
+    }
+
+    function calculate_average_score($data, $exclude = array('id', 'forms_id'))
+    {
+        $sum = 0;
+        $count = 0;
+
+        foreach ($data as $key => $value)
+        {
+            if (in_array($key, $exclude)) {
+                continue;
+            }
+
+            if ($value !== '' && is_numeric($value))
+            {
+                $sum += $value;
+                $count++;
+            }
+        }
+
+        return ($count > 0) ? round($sum / $count, 1) : 0;
+    }
+
+    if (!function_exists('generate_spider_chart')) {
+
+        function generate_spider_chart1($labels, $values, $filename = '')
+        {
+            // Create image
+            // Draw circles
+            // Draw axes
+            // Draw labels
+            // Draw polygon
+            // Save PNG
+
+            return FCPATH.'uploads/charts/'.$filename.'.png';
         }
     }
 

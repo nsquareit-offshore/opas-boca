@@ -230,8 +230,8 @@ class coach extends MY_Controller {
 
 				$coach_id = $this->coach_model->update_coach($data,$id);
 
-				if($this->input->post('password') != '')
-				$data['password'] = password_hash($this->input->post('password'), PASSWORD_BCRYPT);
+				// if($this->input->post('password') != '')
+				// $data['password'] = password_hash($this->input->post('password'), PASSWORD_BCRYPT);
 
 				$data = array(
 					'admin_role_id' => 6,
@@ -244,8 +244,11 @@ class coach extends MY_Controller {
 					'image' => $uploadfile
 				);
 
-				if($this->input->post('password') != '')
-				$data['password'] = password_hash($this->input->post('password'), PASSWORD_BCRYPT);
+				$password = trim($this->input->post('password'));
+
+				if (!empty($password)) {
+				    $data['password'] = password_hash($password, PASSWORD_BCRYPT);
+				}
 
 				$data = $this->security->xss_clean($data);
 				

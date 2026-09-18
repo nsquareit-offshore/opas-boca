@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.2
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jun 23, 2026 at 10:38 PM
--- Server version: 10.11.17-MariaDB-cll-lve
--- PHP Version: 8.4.21
+-- Host: 127.0.0.1
+-- Generation Time: Sep 18, 2026 at 05:53 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -5621,7 +5621,13 @@ INSERT INTO `ci_activity_log` (`id`, `activity_id`, `user_id`, `admin_id`, `crea
 (1000, 8, 31, 0, '2026-03-14 21:58:22'),
 (1001, 8, 31, 0, '2026-03-17 17:23:29'),
 (1002, 8, 31, 0, '2026-03-17 17:23:49'),
-(1003, 8, 31, 0, '2026-03-20 22:07:58');
+(1003, 8, 31, 0, '2026-03-20 22:07:58'),
+(1004, 8, 31, 0, '2026-09-17 22:58:56'),
+(1005, 8, 31, 0, '2026-09-17 23:04:34'),
+(1006, 8, 31, 0, '2026-09-17 23:04:39'),
+(1007, 8, 31, 0, '2026-09-17 23:04:57'),
+(1008, 8, 31, 0, '2026-09-17 23:05:01'),
+(1009, 8, 31, 0, '2026-09-18 00:38:22');
 
 -- --------------------------------------------------------
 
@@ -5657,7 +5663,7 @@ INSERT INTO `ci_activity_status` (`id`, `description`) VALUES
 
 CREATE TABLE `ci_admin_roles` (
   `admin_role_id` int(11) NOT NULL,
-  `admin_role_title` varchar(30) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `admin_role_title` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `admin_role_status` int(11) NOT NULL,
   `admin_role_created_by` int(1) NOT NULL,
   `admin_role_created_on` datetime NOT NULL,
@@ -5672,7 +5678,7 @@ CREATE TABLE `ci_admin_roles` (
 INSERT INTO `ci_admin_roles` (`admin_role_id`, `admin_role_title`, `admin_role_status`, `admin_role_created_by`, `admin_role_created_on`, `admin_role_modified_by`, `admin_role_modified_on`) VALUES
 (1, 'Super Admin', 1, 0, '2018-03-15 12:48:04', 0, '2018-03-17 12:53:16'),
 (2, 'Admin', 1, 0, '2018-03-15 12:53:19', 0, '2019-01-26 08:27:34'),
-(3, 'Accountant', 1, 0, '2018-03-15 01:46:54', 0, '2019-01-26 02:17:38'),
+(3, 'Parent', 1, 0, '2018-03-15 01:46:54', 0, '2019-01-26 02:17:38'),
 (4, 'Operator', 1, 0, '2018-03-16 05:52:45', 0, '2019-01-26 02:17:52'),
 (5, 'User', 1, 0, '2020-11-23 11:37:39', 0, '2020-11-24 08:38:00'),
 (6, 'Coach', 1, 0, '2021-11-15 05:39:17', 0, '2021-11-15 05:39:17');
@@ -5711,7 +5717,7 @@ CREATE TABLE `ci_athlete` (
 --
 
 INSERT INTO `ci_athlete` (`id`, `first_name`, `last_name`, `email_address`, `secondary_email_address`, `contact_no`, `parent_f_name`, `parent_l_name`, `brith_dd`, `brith_mm`, `brith_yyy`, `city`, `state`, `gender`, `age_category`, `team_program`, `team_name`, `playing_position`, `upload_data`, `created_date`) VALUES
-(78, 'Advik ', 'Anchan', 'surajanchan@rapidcorpindia.com', '', '9886745133', 'Suraj', 'Kumar', '26/06/2011', '', '', 'Bangalore', 'karnataka', 'male', 'U14', 'Academic', 'a:1:{i:0;s:2:\"27\";}', '', 'profilepic_default.png', '2025-01-18 10:01:01'),
+(78, 'Advik ', 'Anchan', 'surajanchan@rapidcorpindia.com', '', '9886745133', 'Suraj', 'Kumar', '26/06/2011', '', '', 'Bangalore', 'karnataka', 'male', 'U9', 'Academic', 'a:1:{i:0;s:2:\"27\";}', '', 'profilepic_default.png', '2026-09-17 11:09:01'),
 (91, 'Abhishek ', 'Mukherjee', 'amu3424@gmail.com', 'mukuaj@yahoo.com', '9845231581', 'Anindya ', 'Mukherjee', '09/08/2011', '', '', 'Bangalore', 'karnataka', 'male', 'U14', 'Excellence', 'a:1:{i:0;s:2:\"24\";}', '', 'profilepic_default.png', '2024-09-06 10:09:00'),
 (93, 'Shlok', 'Maheshwari', 'alokmah@gmail.com', 'maheshwari.hika@gmail.com', '9901259288', 'Alok ', 'Maheshwari', '22/03/2011', '', '', 'Bangalore', 'karnataka', 'male', 'U14', 'Excellence', 'a:1:{i:0;s:2:\"24\";}', '', 'profilepic_default.png', '2024-09-06 10:09:21'),
 (97, 'Rishaan ', 'Chaudhri', 'ramchaudhuri@gmail.com', 'vidh21@gmail.com', '7406091703', 'Ramit', 'Chaudhri', '26/06/2011', '', '', 'Bangalore', 'karnataka', 'male', 'U14', 'Excellence', 'a:1:{i:0;s:2:\"24\";}', '', 'profilepic_default.png', '2024-09-06 10:09:39'),
@@ -7610,7 +7616,9 @@ INSERT INTO `ci_boday_composition_analysis` (`id`, `forms_id`, `boday_height_ran
 (1322, 1322, '', '0.00', '', '0.00', '0.00', '0.00'),
 (1323, 1323, '', '0.00', '', '0.00', '0.00', '0.00'),
 (1324, 1324, '', '0.00', '', '0.00', '0.00', '0.00'),
-(1325, 1325, '', '0.00', '', '0.00', '0.00', '0.00');
+(1325, 1325, '', '0.00', '', '0.00', '0.00', '0.00'),
+(1326, 1326, '', '55', '', '50', '2', '22'),
+(1327, 1327, '', '55', '', '40', '2', '5');
 
 -- --------------------------------------------------------
 
@@ -8953,7 +8961,9 @@ INSERT INTO `ci_body_composition_analysis` (`id`, `forms_id`, `body_composition_
 (1322, 1322, ''),
 (1323, 1323, ''),
 (1324, 1324, ''),
-(1325, 1325, '');
+(1325, 1325, ''),
+(1326, 1326, ''),
+(1327, 1327, '');
 
 -- --------------------------------------------------------
 
@@ -56980,7 +56990,7 @@ CREATE TABLE `ci_coach` (
 --
 
 INSERT INTO `ci_coach` (`id`, `first_name`, `last_name`, `email_address`, `contact_no`, `coach_city`, `coach_state`, `gender`, `assign_team`, `is_head_coach`, `user_id`, `upload_data`, `created_date`) VALUES
-(32, 'Derryl', 'Anthony Dsouza', 'derryldsouza@bocajuniorsindia.com', '9529417399', 'Bangalore', 'Karnataka', 'male', 'a:18:{i:0;s:2:\"18\";i:1;s:2:\"27\";i:2;s:2:\"28\";i:3;s:2:\"29\";i:4;s:2:\"37\";i:5;s:2:\"38\";i:6;s:2:\"44\";i:7;s:2:\"47\";i:8;s:2:\"22\";i:9;s:2:\"24\";i:10;s:2:\"26\";i:11;s:2:\"41\";i:12;s:2:\"45\";i:13;s:2:\"46\";i:14;s:2:\"21\";i:15;s:2:\"23\";i:16;s:2:\"25\";i:17;s:2:\"42\";}', 1, 70, 'Derryl.png', '2025-09-11 10:09:22'),
+(32, 'Derryl', 'Anthony Dsouza', 'derryldsouza@bocajuniorsindia.com', '9529417399', 'Bangalore', 'Karnataka', 'male', 'a:17:{i:0;s:2:\"27\";i:1;s:2:\"28\";i:2;s:2:\"29\";i:3;s:2:\"37\";i:4;s:2:\"38\";i:5;s:2:\"44\";i:6;s:2:\"47\";i:7;s:2:\"22\";i:8;s:2:\"24\";i:9;s:2:\"26\";i:10;s:2:\"41\";i:11;s:2:\"45\";i:12;s:2:\"46\";i:13;s:2:\"21\";i:14;s:2:\"23\";i:15;s:2:\"25\";i:16;s:2:\"42\";}', 1, 70, 'Derryl.png', '2026-09-18 12:09:21'),
 (35, 'Varun ', 'Balchand', 'varunbalchand@gmail.com', '9663500225', 'Bangalore', 'Karnataka', 'male', 'a:4:{i:0;s:2:\"22\";i:1;s:2:\"46\";i:2;s:2:\"21\";i:3;s:2:\"42\";}', 0, 73, 'Varun.png', '2026-02-14 04:02:41'),
 (40, 'Michael ', 'Edegar', 'ehiedegar@gmail.com', '9035618138', 'Bengaluru', 'Karnataka', 'male', 'a:3:{i:0;s:2:\"38\";i:1;s:2:\"24\";i:2;s:2:\"23\";}', 0, 78, 'Michael.png', '2026-02-14 04:02:26'),
 (41, 'Peter', 'John', 'johnpeter9066@gmail.com', '9066258265', 'Bengaluru', 'Karnataka', 'male', 'a:3:{i:0;s:2:\"38\";i:1;s:2:\"26\";i:2;s:2:\"25\";}', 0, 79, 'John.png', '2026-02-14 04:02:58'),
@@ -57012,7 +57022,7 @@ CREATE TABLE `ci_companies` (
   `address1` varchar(255) NOT NULL,
   `address2` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `ci_companies`
@@ -57043,7 +57053,7 @@ CREATE TABLE `ci_countries` (
   `slug` varchar(255) NOT NULL,
   `phonecode` int(11) NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `ci_countries`
@@ -57296,6 +57306,64 @@ INSERT INTO `ci_countries` (`id`, `sortname`, `name`, `slug`, `phonecode`, `stat
 (244, 'YU', 'Yugoslavia', 'yugoslavia', 38, 1),
 (245, 'ZM', 'Zambia', 'zambia', 260, 1),
 (246, 'ZW', 'Zimbabwe', 'zimbabwe', 263, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ci_development_plan_form`
+--
+
+CREATE TABLE `ci_development_plan_form` (
+  `id` bigint(255) NOT NULL,
+  `key_performance_indicator` varchar(255) NOT NULL,
+  `athlete_id` bigint(255) NOT NULL,
+  `quarter_year_id` int(255) NOT NULL,
+  `is_active` int(22) NOT NULL,
+  `created_date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `ci_development_plan_form`
+--
+
+INSERT INTO `ci_development_plan_form` (`id`, `key_performance_indicator`, `athlete_id`, `quarter_year_id`, `is_active`, `created_date`) VALUES
+(20, '5', 78, 1, 1, '2026-09-15 10:09:44'),
+(21, '5', 78, 3, 1, '2026-09-14 06:09:26'),
+(22, '5', 78, 7, 1, '2026-09-15 04:09:53'),
+(23, '5', 134, 1, 1, '2026-09-16 10:09:45'),
+(24, '5', 134, 3, 1, '2026-09-16 11:09:48');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ci_development_plan_overview`
+--
+
+CREATE TABLE `ci_development_plan_overview` (
+  `id` bigint(255) NOT NULL,
+  `forms_id` bigint(255) NOT NULL,
+  `development_area_1` varchar(255) DEFAULT NULL,
+  `development_area_2` varchar(255) DEFAULT NULL,
+  `individual_development_plan` text DEFAULT NULL,
+  `remark` text DEFAULT NULL,
+  `created_date` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `ci_development_plan_overview`
+--
+
+INSERT INTO `ci_development_plan_overview` (`id`, `forms_id`, `development_area_1`, `development_area_2`, `individual_development_plan`, `remark`, `created_date`) VALUES
+(28, 21, 'Test a1 27-28', 'test a2 27-28', 'test a', '', '2026-09-14 18:58:27'),
+(29, 21, 'test b 1', 'test b 2', 'test bb', '', '2026-09-14 18:58:27'),
+(33, 22, 'Dev 1 26-27', 'Dev 2 26 - 27', 'test 26 27', '', '2026-09-15 16:48:54'),
+(34, 22, 'test 2 26', 'test 2 27', 'teee', '', '2026-09-15 16:48:54'),
+(35, 20, 'Test 1 27-28', 'test 2 27-28', 'test1', '', '2026-09-15 22:11:45'),
+(36, 20, 'Test 1.1 27-28', 'Test 1.2 27-28', 'test2', '', '2026-09-15 22:11:45'),
+(37, 23, 'Pra a1 27-28', 'Pra a2 27-28', 'testing', NULL, '2026-09-16 10:35:45'),
+(38, 23, 'Pra  1.1 27-28', 'Pra 1.2 27-28', 'Pra testing', NULL, '2026-09-16 10:35:45'),
+(43, 24, 'Development Area Value 1', 'Development Area Value 2', 'Individual Development Plan Value', 'Remark Value', '2026-09-16 11:00:49'),
+(44, 24, 'Development Area Value 1.1', 'Development Area Value 1.2', 'Individual Development Plan Value', 'Remark Value 1.2', '2026-09-16 11:00:49');
 
 -- --------------------------------------------------------
 
@@ -58688,7 +58756,9 @@ INSERT INTO `ci_forms` (`id`, `key_performance_indicator`, `athlete_id`, `quarte
 (1322, '2', 963, 6, 1, '2026-06-03 11:06:21'),
 (1323, '2', 964, 6, 1, '2026-06-03 11:06:38'),
 (1324, '2', 944, 6, 1, '2026-06-03 10:06:16'),
-(1325, '2', 999, 6, 1, '2026-06-03 11:06:51');
+(1325, '2', 999, 6, 1, '2026-06-03 11:06:51'),
+(1326, '1', 101, 1, 1, '2026-07-30 11:07:16'),
+(1327, '1', 78, 3, 1, '2026-07-31 10:07:57');
 
 -- --------------------------------------------------------
 
@@ -60036,7 +60106,9 @@ INSERT INTO `ci_functional_movement_screen` (`id`, `forms_id`, `deep_squat`, `in
 (1322, 1322, '0', '0', 0, 0, 0, 0),
 (1323, 1323, '0', '0', 0, 0, 0, 0),
 (1324, 1324, '0', '0', 0, 0, 0, 0),
-(1325, 1325, '0', '0', 0, 0, 0, 0);
+(1325, 1325, '0', '0', 0, 0, 0, 0),
+(1326, 1326, '3', '1', 1, 2, 1, 2),
+(1327, 1327, '3', '3', 2, 2, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -60069,7 +60141,7 @@ CREATE TABLE `ci_general_settings` (
   `recaptcha_lang` varchar(50) DEFAULT NULL,
   `created_date` datetime DEFAULT NULL,
   `updated_date` datetime DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `ci_general_settings`
@@ -60256,7 +60328,8 @@ INSERT INTO `ci_goalkeeper_forms` (`id`, `key_performance_indicator`, `athlete_i
 (166, '2', 1008, 6, 0, '2026-05-31 07:05:38'),
 (167, '2', 1027, 6, 0, '2026-05-31 07:05:34'),
 (168, '2', 1039, 6, 0, '2026-05-31 07:05:12'),
-(169, '2', 777, 6, 0, '2026-05-31 07:05:24');
+(169, '2', 777, 6, 0, '2026-05-31 07:05:24'),
+(170, '1', 182, 7, 1, '2026-09-15 04:09:48');
 
 -- --------------------------------------------------------
 
@@ -60437,7 +60510,8 @@ INSERT INTO `ci_goalkeeper_physical_overview` (`id`, `forms_id`, `footwork`, `ag
 (166, 166, 3, 3, 3, 3, 3),
 (167, 167, 2, 2, 2, 1, 2),
 (168, 168, 2, 2, 2, 2, 2),
-(169, 169, 3, 3, 3, 3, 3);
+(169, 169, 3, 3, 3, 3, 3),
+(170, 170, 9, 8, 7, 9, 8);
 
 -- --------------------------------------------------------
 
@@ -60620,7 +60694,8 @@ INSERT INTO `ci_goalkeeper_psychological_overview` (`id`, `forms_id`, `composure
 (166, 166, 3, 3, 3, 3, 3, 4, 3),
 (167, 167, 1, 1, 2, 2, 2, 2, 2),
 (168, 168, 2, 2, 3, 2, 3, 2, 2),
-(169, 169, 3, 3, 3, 3, 3, 3, 3);
+(169, 169, 3, 3, 3, 3, 3, 3, 3),
+(170, 170, 9, 8, 7, 8, 9, 7, 9);
 
 -- --------------------------------------------------------
 
@@ -60811,7 +60886,8 @@ INSERT INTO `ci_goalkeeper_tactical_overview` (`id`, `forms_id`, `stance`, `angl
 (166, 166, 3, 3, 3, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
 (167, 167, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2),
 (168, 168, 2, 2, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 1, 2),
-(169, 169, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3, 3);
+(169, 169, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3, 3),
+(170, 170, 8, 7, 7, 8, 7, 6, 7, 8, 9, 8, 9, 7, 8, 9, 7);
 
 -- --------------------------------------------------------
 
@@ -60998,7 +61074,8 @@ INSERT INTO `ci_goalkeeper_techical_overview` (`id`, `forms_id`, `ground_balls`,
 (166, 166, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
 (167, 167, 1, 1, 1, 1, 1, 2, 1, 1, 2, 2, 2),
 (168, 168, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2),
-(169, 169, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4);
+(169, 169, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4),
+(170, 170, 6, 7, 8, 9, 9, 6, 9, 7, 6, 7, 8);
 
 -- --------------------------------------------------------
 
@@ -61028,7 +61105,7 @@ INSERT INTO `ci_key_performance` (`id`, `slug`, `name`) VALUES
 
 CREATE TABLE `ci_language` (
   `id` int(11) NOT NULL,
-  `name` varchar(225) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `name` varchar(225) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `short_name` varchar(15) NOT NULL,
   `status` int(11) NOT NULL DEFAULT 1,
   `created_at` datetime DEFAULT NULL
@@ -61053,7 +61130,7 @@ CREATE TABLE `ci_notes_from_coaching` (
   `forms_id` bigint(255) NOT NULL,
   `notes_frm_tech_dir` text NOT NULL,
   `notes_frm_head_coach` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `ci_notes_from_coaching`
@@ -62403,7 +62480,9 @@ INSERT INTO `ci_notes_from_coaching` (`id`, `forms_id`, `notes_frm_tech_dir`, `n
 (1322, 1322, 'Moses has good ability to make quick dribbles, he can further improve in his finishing technique and create goal scoring chances, he needs to further work on his quickness without the ball and approach the ball to score both aerially and on the ground, overall a player with good ability to be coached and has potential', 'Moses is a player with good dribbling ability, he needs to work on quick decision making as to when to shoot and when to pass by making quick attempts on the goal, he needs to work on receiving of aerial passes and take shots, working on his speed to receive quick passes will enhance his attacking gameplay, a player with good efforts in training and matches. The values show 0.00 or N/A since he was not present for the assessments'),
 (1323, 1323, 'Felipe has good ability to change the direction with the ball and is quick in his passes, he needs to work on his shielding and protecting the ball which is vital for a forward and finish the chances created with quick decisions under pressure, needs to work on his aerial receives and finishing with headers, overall a hardworking player with good discipline', 'Felipe has good ability to make quick combinations and create chances to score, he needs to further improve in his ability to receive and take first touch away from the defenders and protect the ball to convert it into a cross or a shot towards the goal, he needs to further work in his Vertical Jump to meet the crosses for headers and finish, working on speed with the ball will enhance his attacking gameplay, a player with good attitude towards training and working consistently. The values show 0.00 or N/A since he was not present for the assessments'),
 (1324, 1324, 'Aayushman has good ability to read the game and position himself in free spaces, he needs to work in his communication and shooting technique which will enhance his finishing optimally, working on physicality will be a good approach to build overall attacking capability, a player with good attitude in training', 'Aayushman needs to work on his communication to receive the ball to create goal scoring chances after providing runs into free spaces and deliver a cross or a shot, he needs to work on his shooting technique to build more power and direction which will develop with practice, he needs to work on his physicality to be strong in protecting the ball from the opponents, a player with consistent efforts and is having a potential to be an effective forward player. The values show 0.00 or N/A since he was not present for the assessments'),
-(1325, 1325, 'Rayn is in development phase, he has good ability to read the game and position himself in free spaces, he needs to work in his communication and shooting technique which will enhance his finishing optimally, working on physicality will be a good approach to build overall attacking capability, a player with good attitude in training ', 'Rayn is a player with good ability to play quick passes, he needs to work on his communication to receive the ball to create goal scoring chances after providing runs into free spaces and deliver a cross or a shot, he needs to work on his shooting technique to build more power and direction which will develop with practice, he needs to work on his physicality to be strong in protecting the ball from the defenders, a player with consistent efforts and is having a potential to be an effective forward player. The values show 0.00 or N/A since he was not present for the assessments');
+(1325, 1325, 'Rayn is in development phase, he has good ability to read the game and position himself in free spaces, he needs to work in his communication and shooting technique which will enhance his finishing optimally, working on physicality will be a good approach to build overall attacking capability, a player with good attitude in training ', 'Rayn is a player with good ability to play quick passes, he needs to work on his communication to receive the ball to create goal scoring chances after providing runs into free spaces and deliver a cross or a shot, he needs to work on his shooting technique to build more power and direction which will develop with practice, he needs to work on his physicality to be strong in protecting the ball from the defenders, a player with consistent efforts and is having a potential to be an effective forward player. The values show 0.00 or N/A since he was not present for the assessments'),
+(1326, 1326, 'Testing ', 'This is test'),
+(1327, 1327, 'This is test 222-23', 'Testing');
 
 -- --------------------------------------------------------
 
@@ -63753,7 +63832,9 @@ INSERT INTO `ci_notes_from_residence` (`id`, `forms_id`, `notes_frm_resi_war_edu
 (1322, 1322, 4, 4, 4, 4, 4, 4, 'Moses is well behaved and disciplined, he is social with his peers and juniors, expecting the best '),
 (1323, 1323, 0, 0, 0, 0, 0, 0, ''),
 (1324, 1324, 4, 4, 3, 4, 4, 4, 'Aayushman is well disciplined and could surely progress with more focus, expecting the best '),
-(1325, 1325, 4, 4, 4, 4, 4, 4, 'Rayn is well behaved and disciplined, he is social with his peers and juniors, expecting the best ');
+(1325, 1325, 4, 4, 4, 4, 4, 4, 'Rayn is well behaved and disciplined, he is social with his peers and juniors, expecting the best '),
+(1326, 1326, 0, 0, 0, 0, 0, 0, ''),
+(1327, 1327, 0, 0, 0, 0, 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -63781,7 +63862,7 @@ CREATE TABLE `ci_payments` (
   `due_date` date NOT NULL,
   `created_date` date NOT NULL,
   `updated_date` date DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `ci_payments`
@@ -65142,7 +65223,9 @@ INSERT INTO `ci_physical_overview` (`id`, `forms_id`, `with_speed_20m`, `with_sp
 (1322, 1322, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0),
 (1323, 1323, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 17.10, 0.00, 0.00, 0),
 (1324, 1324, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 16.50, 0.00, 0.00, 0),
-(1325, 1325, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 18.20, 0.00, 0.00, 0);
+(1325, 1325, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 18.20, 0.00, 0.00, 0),
+(1326, 1326, 31.00, 21.00, 51.00, 11.00, 22.00, 33.00, 44.00, 55.00, 66.00, 44),
+(1327, 1327, 44.00, 4111.00, 42.00, 422.00, 12.00, 54.00, 12.00, 5.00, 55.00, 500);
 
 -- --------------------------------------------------------
 
@@ -66503,7 +66586,9 @@ INSERT INTO `ci_psychological_overview` (`id`, `forms_id`, `training_concentrati
 (1322, 1322, 3, 3, 3, 3, 3, 3, 2, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
 (1323, 1323, 3, 3, 3, 3, 3, 4, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
 (1324, 1324, 3, 3, 2, 4, 3, 3, 2, 4, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3),
-(1325, 1325, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4);
+(1325, 1325, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4),
+(1326, 1326, 5, 5, 3, 3, 5, 3, 2, 3, 2, 5, 5, 4, 5, 4, 4, 4, 4, 4),
+(1327, 1327, 3, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4);
 
 -- --------------------------------------------------------
 
@@ -72064,7 +72149,9 @@ INSERT INTO `ci_tactical_overview` (`id`, `forms_id`, `ta_reading_game`, `team_p
 (1322, 1322, 3, 3, 3, 3, 2, 3, 3, 2),
 (1323, 1323, 3, 3, 3, 3, 3, 3, 3, 3),
 (1324, 1324, 3, 3, 3, 3, 3, 3, 3, 2),
-(1325, 1325, 4, 4, 4, 3, 3, 4, 3, 4);
+(1325, 1325, 4, 4, 4, 3, 3, 4, 3, 4),
+(1326, 1326, 4, 5, 4, 5, 4, 5, 3, 4),
+(1327, 1327, 4, 4, 4, 4, 4, 4, 4, 4);
 
 -- --------------------------------------------------------
 
@@ -73460,7 +73547,9 @@ INSERT INTO `ci_techical_overview` (`id`, `forms_id`, `running_with_the_ball`, `
 (1322, 1322, 3, 3, 3, 3, 3, 3, 2, 2, 3, 2, 2, 2, 2, 3, 2),
 (1323, 1323, 4, 3, 3, 3, 4, 4, 3, 3, 3, 3, 2, 3, 3, 3, 2),
 (1324, 1324, 3, 3, 3, 2, 3, 3, 2, 3, 3, 2, 2, 3, 3, 3, 2),
-(1325, 1325, 3, 3, 3, 3, 3, 4, 3, 3, 4, 3, 3, 3, 3, 3, 4);
+(1325, 1325, 3, 3, 3, 3, 3, 4, 3, 3, 4, 3, 3, 3, 3, 3, 4),
+(1326, 1326, 1, 2, 3, 3, 4, 5, 3, 5, 2, 3, 5, 1, 5, 5, 1),
+(1327, 1327, 2, 3, 5, 5, 3, 5, 5, 3, 2, 3, 4, 4, 4, 4, 4);
 
 -- --------------------------------------------------------
 
@@ -73490,7 +73579,7 @@ INSERT INTO `ci_uploaded_files` (`id`, `name`, `created_at`) VALUES
 CREATE TABLE `ci_users` (
   `user_id` int(11) NOT NULL,
   `admin_role_id` int(11) NOT NULL,
-  `username` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `username` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `firstname` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -73519,7 +73608,7 @@ CREATE TABLE `ci_users` (
 INSERT INTO `ci_users` (`user_id`, `admin_role_id`, `username`, `firstname`, `lastname`, `email`, `mobile_no`, `image`, `password`, `address`, `last_login`, `is_verify`, `is_admin`, `is_user`, `is_active`, `is_supper`, `added_by`, `token`, `password_reset_code`, `last_ip`, `created_at`, `updated_at`) VALUES
 (25, 2, 'admin', 'Admin', 'User', 'admin@gmail.com', '544354353', 'user2-160x160.jpg', '$2y$10$KyH0L.rMhaXWkMh/ZoN1.e44FOzEak.KzZoUjQdIGiuVJtuKa9z0y', '', '2019-01-09 00:00:00', 1, 1, 0, 1, 0, 0, '', '', '', '2018-03-19 00:00:00', '2019-11-24 00:00:00'),
 (31, 1, 'superadmin', 'super', 'admin', 'codeglamourofficial@gmail.com', '123456', 'superadmin.png', '$2y$10$fN7AL1UgeASwgoNolDy5v.Q7YuCRKOjsY9hdHMCqLlzgVT6Xkc7D2', '', '0000-00-00 00:00:00', 1, 1, 0, 1, 1, 0, '', '', '', '2019-01-16 06:01:58', '2021-11-24 00:00:00'),
-(70, 6, 'derryldsouza@bocajuniorsindia.com', 'Derryl', 'Anthony Dsouza', 'derryldsouza@bocajuniorsindia.com', '9529417399', 'Derryl.png', '$2y$10$E1Mfw5xT3GV04bLmga5MUeVjp2jNmv7pHdjlom9Xt2vBg5LG2/rju', '', '0000-00-00 00:00:00', 1, 1, 0, 1, 0, 0, '', '', '', '2022-02-04 04:02:19', '2025-09-11 00:00:00'),
+(70, 6, 'derryldsouza@bocajuniorsindia.com', 'Derryl', 'Anthony Dsouza', 'derryldsouza@bocajuniorsindia.com', '9529417399', 'Derryl.png', '$2y$10$E1Mfw5xT3GV04bLmga5MUeVjp2jNmv7pHdjlom9Xt2vBg5LG2/rju', '', '0000-00-00 00:00:00', 1, 1, 0, 1, 0, 0, '', '', '', '2022-02-04 04:02:19', '2026-09-18 00:00:00'),
 (73, 6, 'varunbalchand@gmail.com', 'Varun ', 'Balchand', 'varunbalchand@gmail.com', '9663500225', 'Varun.png', '$2y$10$59nuvNPJrUeaAjL2reclZOtnZkBLqI8hdmcSvf0U.tWiuffWjIdlO', '', '0000-00-00 00:00:00', 1, 1, 0, 1, 0, 0, '', '', '', '2022-02-04 05:02:16', '2026-02-14 00:00:00'),
 (78, 6, 'ehiedegar@gmail.com', 'Michael ', 'Edegar', 'ehiedegar@gmail.com', '9035618138', 'Michael.png', '$2y$10$aLnuLI4KuZ0E3jf.hSEYTeEE3.ZHKax4lntE9dZb72wQGkHFzaJfi', '', '0000-00-00 00:00:00', 1, 1, 0, 1, 0, 0, '', '', '', '2022-02-28 08:02:20', '2026-02-14 00:00:00'),
 (79, 6, 'johnpeter9066@gmail.com', 'Peter', 'John', 'johnpeter9066@gmail.com', '9066258265', 'John.png', '$2y$10$zrLPb8IcdwsMCxBN6fPuHexqeuJcXGC4Z4ljq5mKozy.M4cdxXSi2', '', '0000-00-00 00:00:00', 1, 1, 0, 1, 0, 0, '', '', '', '2022-04-08 09:04:10', '2026-02-14 00:00:00'),
@@ -73539,6 +73628,20 @@ INSERT INTO `ci_users` (`user_id`, `admin_role_id`, `username`, `firstname`, `la
 (104, 6, 'mubumuhammedmubhashir@gmail.com', 'Mubhashir', 'M', 'mubumuhammedmubhashir@gmail.com', '8086832838', 'profilepic_default.png', '$2y$10$B4EAeqPfTm79NUe2u4Z9weIfhZC4uOz5u1YV5YvIdEsg80mlpopge', '', '0000-00-00 00:00:00', 1, 1, 0, 1, 0, 0, '', '', '', '2026-01-02 00:00:00', '2026-03-01 00:00:00'),
 (105, 6, 'irfankhan2602@gmail.com', 'Irfan', 'Khan', 'irfankhan2602@gmail.com', '8073848074', '', '$2y$10$RQ88pIEnK8IBVi9KEkatxeNWqf2pvJfzmxQfpyfI0s2UcTe66P8pC', '', '0000-00-00 00:00:00', 1, 1, 0, 1, 0, 0, '', '', '', '2026-02-14 00:00:00', '2026-02-14 00:00:00'),
 (106, 6, 'nagweyash19@gmail.com', 'Yash', 'Nagwe', 'nagweyash19@gmail.com', '7620592448', 'profilepic_default.png', '$2y$10$R0z0hN/kpuBP5NiO7EqigO9WtZK6z.x4IjatWAH3Pz0FBSEyVZnFa', '', '0000-00-00 00:00:00', 1, 1, 0, 1, 0, 0, '', '', '', '2026-02-14 00:00:00', '2026-03-07 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `development_plan_remarks`
+--
+
+CREATE TABLE `development_plan_remarks` (
+  `id` int(11) NOT NULL,
+  `forms_id` int(11) NOT NULL,
+  `remark` text NOT NULL,
+  `created_date` datetime NOT NULL,
+  `updated_date` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -73805,6 +73908,18 @@ ALTER TABLE `ci_countries`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `ci_development_plan_form`
+--
+ALTER TABLE `ci_development_plan_form`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `ci_development_plan_overview`
+--
+ALTER TABLE `ci_development_plan_overview`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `ci_email_templates`
 --
 ALTER TABLE `ci_email_templates`
@@ -73955,6 +74070,12 @@ ALTER TABLE `ci_users`
   ADD PRIMARY KEY (`user_id`);
 
 --
+-- Indexes for table `development_plan_remarks`
+--
+ALTER TABLE `development_plan_remarks`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `module`
 --
 ALTER TABLE `module`
@@ -73994,7 +74115,7 @@ ALTER TABLE `ci_academic_techical_overview`
 -- AUTO_INCREMENT for table `ci_activity_log`
 --
 ALTER TABLE `ci_activity_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1004;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1010;
 
 --
 -- AUTO_INCREMENT for table `ci_activity_status`
@@ -74018,13 +74139,13 @@ ALTER TABLE `ci_athlete`
 -- AUTO_INCREMENT for table `ci_boday_composition_analysis`
 --
 ALTER TABLE `ci_boday_composition_analysis`
-  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1326;
+  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1328;
 
 --
 -- AUTO_INCREMENT for table `ci_body_composition_analysis`
 --
 ALTER TABLE `ci_body_composition_analysis`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1326;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1328;
 
 --
 -- AUTO_INCREMENT for table `ci_cities`
@@ -74051,6 +74172,18 @@ ALTER TABLE `ci_countries`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=247;
 
 --
+-- AUTO_INCREMENT for table `ci_development_plan_form`
+--
+ALTER TABLE `ci_development_plan_form`
+  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT for table `ci_development_plan_overview`
+--
+ALTER TABLE `ci_development_plan_overview`
+  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+
+--
 -- AUTO_INCREMENT for table `ci_email_templates`
 --
 ALTER TABLE `ci_email_templates`
@@ -74066,13 +74199,13 @@ ALTER TABLE `ci_email_template_variables`
 -- AUTO_INCREMENT for table `ci_forms`
 --
 ALTER TABLE `ci_forms`
-  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1326;
+  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1328;
 
 --
 -- AUTO_INCREMENT for table `ci_functional_movement_screen`
 --
 ALTER TABLE `ci_functional_movement_screen`
-  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1326;
+  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1328;
 
 --
 -- AUTO_INCREMENT for table `ci_general_settings`
@@ -74084,31 +74217,31 @@ ALTER TABLE `ci_general_settings`
 -- AUTO_INCREMENT for table `ci_goalkeeper_forms`
 --
 ALTER TABLE `ci_goalkeeper_forms`
-  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
+  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=171;
 
 --
 -- AUTO_INCREMENT for table `ci_goalkeeper_physical_overview`
 --
 ALTER TABLE `ci_goalkeeper_physical_overview`
-  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
+  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=171;
 
 --
 -- AUTO_INCREMENT for table `ci_goalkeeper_psychological_overview`
 --
 ALTER TABLE `ci_goalkeeper_psychological_overview`
-  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
+  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=171;
 
 --
 -- AUTO_INCREMENT for table `ci_goalkeeper_tactical_overview`
 --
 ALTER TABLE `ci_goalkeeper_tactical_overview`
-  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
+  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=171;
 
 --
 -- AUTO_INCREMENT for table `ci_goalkeeper_techical_overview`
 --
 ALTER TABLE `ci_goalkeeper_techical_overview`
-  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
+  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=171;
 
 --
 -- AUTO_INCREMENT for table `ci_key_performance`
@@ -74126,13 +74259,13 @@ ALTER TABLE `ci_language`
 -- AUTO_INCREMENT for table `ci_notes_from_coaching`
 --
 ALTER TABLE `ci_notes_from_coaching`
-  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1326;
+  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1328;
 
 --
 -- AUTO_INCREMENT for table `ci_notes_from_residence`
 --
 ALTER TABLE `ci_notes_from_residence`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1326;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1328;
 
 --
 -- AUTO_INCREMENT for table `ci_payments`
@@ -74144,13 +74277,13 @@ ALTER TABLE `ci_payments`
 -- AUTO_INCREMENT for table `ci_physical_overview`
 --
 ALTER TABLE `ci_physical_overview`
-  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1326;
+  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1328;
 
 --
 -- AUTO_INCREMENT for table `ci_psychological_overview`
 --
 ALTER TABLE `ci_psychological_overview`
-  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1326;
+  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1328;
 
 --
 -- AUTO_INCREMENT for table `ci_quarter_years`
@@ -74174,7 +74307,7 @@ ALTER TABLE `ci_states`
 -- AUTO_INCREMENT for table `ci_tactical_overview`
 --
 ALTER TABLE `ci_tactical_overview`
-  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1326;
+  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1328;
 
 --
 -- AUTO_INCREMENT for table `ci_team`
@@ -74186,7 +74319,7 @@ ALTER TABLE `ci_team`
 -- AUTO_INCREMENT for table `ci_techical_overview`
 --
 ALTER TABLE `ci_techical_overview`
-  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1326;
+  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1328;
 
 --
 -- AUTO_INCREMENT for table `ci_uploaded_files`
@@ -74199,6 +74332,12 @@ ALTER TABLE `ci_uploaded_files`
 --
 ALTER TABLE `ci_users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+
+--
+-- AUTO_INCREMENT for table `development_plan_remarks`
+--
+ALTER TABLE `development_plan_remarks`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `module`

@@ -75,11 +75,13 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '',
-	
-	'username' => '',
+	'hostname' => 'localhost',
+	// 'username' => 'codeglam_codecan',
+	// 'password' => 'Pakistan@123+-',
+	// 'database' => 'codeglam_demotest',
+	'username' => 'root',
 	'password' => '',
-	'database' => '',
+	'database' => 'bocca_db',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

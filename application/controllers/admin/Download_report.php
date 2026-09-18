@@ -39,6 +39,32 @@ class download_report extends MY_Controller {
 			
 		}
 
+		//---------------------------------------------------
+		// Get All Invoices
+		public function athlete(){
+			$data['coach'] = get_coach_by_userid($this->session->userdata('user_id'));
+			$data['is_supper'] = $this->session->userdata('is_supper');
+			
+			$data['all_athlete_qt'] = $this->dashboard_model->get_all_athlete_qt();
+
+			$data['all_quarter_year'] = $this->dashboard_model->get_all_quarter_year();
+			
+			$data['send_email'] = $this->dashboard_model->get_send_mail();
+			
+
+			$data['forms_key_detail'] = $this->download_report_model->get_report_list();
+			$data['athlete_list'] =$this->download_report_model->get_athlete_list();
+
+			//$data['year_by_athlete'] =$this->download_report_model->get_year_by_athlete();
+			//$data['key_perfo_indicat'] =$this->download_report_model->get_key_perfo_indicat();
+			$data['title'] = 'Download Report';
+
+			$this->load->view('admin/includes/_header',$data);
+        	$this->load->view('admin/download_report/download_report_parent',$data);
+        	$this->load->view('admin/includes/_footer');
+			
+		}
+
 		public function year_by_athlete(){
 			$athlete_id = $_POST['athlete_id'];
 			$data_year = $this->download_report_model->get_year_by_athlete($athlete_id);
@@ -122,7 +148,72 @@ class download_report extends MY_Controller {
 			$data['residence_notes_overview'] = $this->download_report_model->get_residence_notes_overview_repo($id);			
 			$key_performance_indicator_ids = $this->download_report_model->get_key_performance_indicator_by_form($id);
 			
+			// start spider charts
+			// Labels
+			$labels = array(
+			    'Technical',
+			    'Psychological',
+			    'Functional',
+			    'Tactical'
+			);
 
+			$dataset1 = array();
+			$dataset2 = array();
+
+			// Cycle 1
+			if (
+			    ($v_report_name['key_performance_indicator'] == 1 && $data['count_q'] == 1)
+			    ||
+			    ($v_report_name['key_performance_indicator'] == 1 && $data['count_q'] == 2)
+			)
+			{
+			    $cycle1 = array(
+			        calculate_average_score($data['techical_overview'][0]),
+			        calculate_average_score($data['psychological_overview'][0]),
+			        calculate_average_score($data['functional_overview'][0]),
+			        calculate_average_score($data['tactical_overview'][0])
+			    );
+
+			    $dataset1 = array(
+			        'label'  => 'Cycle 1',
+			        'color'  => '#2196F3',
+			        'values' => $cycle1
+			    );
+			}
+
+
+			// Cycle 2
+			if (
+			    ($v_report_name['key_performance_indicator'] == 2 && $data['count_q'] == 1)
+			    ||
+			    ($v_report_name['key_performance_indicator'] == 1 && $data['count_q'] == 2)
+			)
+			{
+			    $cycle2Index = ($data['count_q'] == 2) ? 1 : 0;
+
+			    $cycle2 = array(
+			        calculate_average_score($data['techical_overview'][$cycle2Index]),
+			        calculate_average_score($data['psychological_overview'][$cycle2Index]),
+			        calculate_average_score($data['functional_overview'][$cycle2Index]),
+			        calculate_average_score($data['tactical_overview'][$cycle2Index])
+			    );
+
+			    $dataset2 = array(
+			        'label'  => 'Cycle 2',
+			        'color'  => '#FFA500',
+			        'values' => $cycle2
+			    );
+			}
+
+
+
+			$data['spiral_chart']['chart'] = spider_chart(
+			    $labels,
+			    $dataset1,
+			    $dataset2
+			);
+			// end spider charts
+			
 			$first_half = 0;
 			$second_half = 0;
 			$yearly = 0;

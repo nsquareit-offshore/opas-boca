@@ -152,7 +152,7 @@
                                                 $coach = get_coach_by_userid($this->session->userdata('user_id'));
                                                 $team_arr = unserialize($coach['assign_team']); 
                                                 ?>
-                                                 <select class="form-control" name="select_athlete" id="select_athlete" required="">
+                                                 <select class="form-control select2" name="select_athlete" id="select_athlete" required="">
                                                     <option value="">Select Athlete</option>
                                                     <?php 
                                                     foreach ($athlete_list as $key => $value_alt) { 
@@ -167,7 +167,7 @@
                                                 <?php
                                             }else{
                                                 ?>
-                                                 <select class="form-control" name="select_athlete" id="select_athlete" required="">
+                                                 <select class="form-control select2" name="select_athlete" id="select_athlete" required="">
                                                     <option value="">Select Athlete</option>
                                                     <?php 
                                                     foreach ($athlete_list as $key => $value_alt) { 
